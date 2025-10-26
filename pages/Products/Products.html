@@ -4,16 +4,696 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Luxe Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Products.css">
-    <script src="Products.js" defer></script>
+        body {
+            font-family: 'Georgia', serif;
+            color: #2d2d2d;
+            overflow-x: hidden;
+            background: #fafafa;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2d2d2d;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c17d5f;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #c17d5f;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            right: -450px;
+            top: 0;
+            width: 450px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .cart-overlay.open {
+            display: block;
+            opacity: 1;
+        }
+
+        .cart-header {
+            padding: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h2 {
+            font-size: 1.5rem;
+            color: #2d2d2d;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .close-cart:hover {
+            color: #c17d5f;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: #fafafa;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2d2d2d;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-category {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            font-size: 1.1rem;
+            color: #c17d5f;
+            font-weight: bold;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .cart-item-remove:hover {
+            color: #ff4444;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+
+        .cart-empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .cart-footer {
+            padding: 1.5rem 2rem;
+            border-top: 2px solid #e0e0e0;
+            background: #fafafa;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .cart-total-label {
+            font-weight: bold;
+            color: #2d2d2d;
+        }
+
+        .cart-total-amount {
+            font-size: 1.8rem;
+            color: #c17d5f;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .checkout-btn:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 968px) {
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 4rem 5% 2rem;
+            background: linear-gradient(135deg, #fef5ef 0%, #f9e8dc 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Filters & Search */
+        .controls-section {
+            padding: 2rem 5%;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .controls-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .search-bar {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.8rem 3rem 0.8rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #c17d5f;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #c17d5f;
+        }
+
+        .filter-sort {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-dropdown {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            background: white;
+            transition: border-color 0.3s;
+        }
+
+        .filter-dropdown:hover {
+            border-color: #d4a574;
+        }
+
+        .results-count {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            padding: 2rem 5% 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.8rem 2rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            color: #666;
+        }
+
+        .filter-tab:hover {
+            border-color: #d4a574;
+            color: #2d2d2d;
+        }
+
+        .filter-tab.active {
+            background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 2rem 5% 4rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #d4a574;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            z-index: 2;
+        }
+
+        .wishlist-btn:hover {
+            transform: scale(1.1);
+            background: #ffe0e0;
+        }
+
+        .wishlist-btn.active {
+            color: #ff4444;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            background: #fafafa;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .quick-view {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            background: #2d2d2d;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .product-card:hover .quick-view {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .product-info {
+            text-align: center;
+        }
+
+        .product-category {
+            color: #999;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2d2d2d;
+        }
+
+        .product-card p {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-colors {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            align-items: center;
+        }
+
+        .color-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.2);
+            border-color: #c17d5f;
+        }
+
+        .product-rating {
+            color: #d4a574;
+            font-size: 0.9rem;
+            margin: 0.8rem 0;
+        }
+
+        .product-rating span {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #c17d5f;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .product-price .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: transform 0.2s;
+        }
+
+        .add-cart:hover {
+            transform: scale(1.05);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 3rem 5%;
+        }
+
+        .page-btn {
+            padding: 0.7rem 1.2rem;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .no-results h3 {
+            font-size: 1.8rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .controls-wrapper {
+                flex-direction: column;
+            }
+
+            .search-bar {
+                max-width: 100%;
+            }
+
+            .filter-sort {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                padding: 1.5rem 5% 1rem;
+            }
+
+            .filter-tab {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">LUXE</div>
         <nav>
-            <a href="/index.html">HOME</a>
+            <a href="#home">HOME</a>
             <a href="#products">PRODUCTS</a>
             <a href="#about">ABOUT</a>
             <a href="#contact">CONTACT</a>
@@ -105,6 +785,325 @@
         <button class="page-btn" onclick="changePage('next')">→</button>
     </div>
 
-  
+    <script>
+        let currentPage = 1;
+        const productsPerPage = 12;
+        let cart = [];
+
+        const products = [
+            { id: 1, name: 'Velvet Matte Lipstick', category: 'lips', price: 28, rating: 5, reviews: 245, image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=400&fit=crop', colors: ['#8B2635', '#C85A54', '#A0522D', '#DC143C'], badge: 'NEW', description: 'Long-lasting, highly pigmented formula' },
+            { id: 2, name: 'Radiance Foundation', category: 'face', price: 42, rating: 5, reviews: 312, image: 'https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=400&h=400&fit=crop', colors: ['#F5D5C0', '#E8B897', '#D4A574', '#8D5524'], description: 'Flawless, buildable coverage' },
+            { id: 3, name: 'Luxe Eye Palette', category: 'eyes', price: 58, rating: 5, reviews: 428, image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop', badge: 'BESTSELLER', badgeColor: '#c17d5f', description: '12 versatile shades for any look' },
+            { id: 4, name: 'Dewy Setting Spray', category: 'face', price: 32, rating: 5, reviews: 189, image: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=400&fit=crop', description: 'All-day lasting finish with radiance' },
+            { id: 5, name: 'Luxe Lip Gloss', category: 'lips', price: 24, rating: 4, reviews: 156, image: 'https://images.unsplash.com/photo-1614887822588-4cffd785c499?w=400&h=400&fit=crop', colors: ['#FFB6C1', '#FF69B4', '#C17D5F'], description: 'High-shine, non-sticky formula' },
+            { id: 6, name: 'Blush & Contour Duo', category: 'face', price: 38, rating: 5, reviews: 203, image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop', colors: ['#FFC0CB', '#FFB6A3', '#E8B897'], badge: 'NEW', description: 'Sculpt and define effortlessly' },
+            { id: 7, name: 'Precision Eyeliner', category: 'eyes', price: 22, rating: 5, reviews: 278, image: 'https://images.unsplash.com/photo-1631730486572-226d1f595b68?w=400&h=400&fit=crop', colors: ['#000', '#2F4F4F', '#8B4513'], description: 'Waterproof, smudge-proof formula' },
+            { id: 8, name: 'Hydrating Serum', category: 'skincare', price: 56, rating: 5, reviews: 392, image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop', badge: 'BESTSELLER', badgeColor: '#c17d5f', description: 'Deep moisture with vitamin C' },
+            { id: 9, name: 'SPF 50 Day Cream', category: 'skincare', price: 44, rating: 4, reviews: 167, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop', description: 'Sun protection with nourishment' },
+            { id: 10, name: 'Volume Mascara', category: 'eyes', price: 26, rating: 5, reviews: 341, image: 'https://images.unsplash.com/photo-1631730486146-f4db005e1e1b?w=400&h=400&fit=crop', description: 'Dramatic length and volume' },
+            { id: 11, name: 'Illuminating Highlighter', category: 'face', price: 34, rating: 5, reviews: 289, image: 'https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=400&h=400&fit=crop', description: 'Radiant glow for all skin tones' },
+            { id: 12, name: 'Night Repair Cream', category: 'skincare', price: 62, rating: 5, reviews: 215, image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop', badge: 'NEW', description: 'Regenerate while you sleep' },
+            { id: 13, name: 'Lip Liner Set', category: 'lips', price: 32, rating: 5, reviews: 198, image: 'https://images.unsplash.com/photo-1625443328636-e630d97d9e9a?w=400&h=400&fit=crop', colors: ['#8B2635', '#C85A54', '#A0522D'], description: 'Define and shape perfectly' },
+            { id: 14, name: 'Cream Blush', category: 'face', price: 29, rating: 4, reviews: 176, image: 'https://images.unsplash.com/photo-1627225924765-552d49cf47ad?w=400&h=400&fit=crop', colors: ['#FFB6C1', '#FF69B4', '#FFC0CB'], description: 'Natural, dewy flush' },
+            { id: 15, name: 'Brow Gel', category: 'eyes', price: 24, rating: 5, reviews: 267, image: 'https://images.unsplash.com/photo-1626530531635-7ce53b1d9813?w=400&h=400&fit=crop', description: 'Long-lasting hold and definition' },
+            { id: 16, name: 'Makeup Remover', category: 'skincare', price: 28, rating: 5, reviews: 312, image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop', description: 'Gentle, effective cleansing' },
+            { id: 17, name: 'Liquid Lipstick', category: 'lips', price: 26, rating: 4, reviews: 223, image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=400&fit=crop', colors: ['#8B2635', '#DC143C', '#C85A54'], description: 'Transfer-proof matte finish' },
+            { id: 18, name: 'Primer Serum', category: 'face', price: 48, rating: 5, reviews: 198, image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop', badge: 'NEW', description: 'Flawless base for makeup' },
+            { id: 19, name: 'Eyeshadow Singles', category: 'eyes', price: 18, rating: 4, reviews: 145, image: 'https://images.unsplash.com/photo-1583241800698-c318236c9f10?w=400&h=400&fit=crop', description: 'Highly pigmented shades' },
+            { id: 20, name: 'Facial Oil', category: 'skincare', price: 52, rating: 5, reviews: 234, image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop', description: 'Nourishing botanical blend' },
+            { id: 21, name: 'Lip Balm SPF', category: 'lips', price: 16, rating: 4, reviews: 189, image: 'https://images.unsplash.com/photo-1614887822588-4cffd785c499?w=400&h=400&fit=crop', description: 'Moisturize and protect' },
+            { id: 22, name: 'Setting Powder', category: 'face', price: 36, rating: 5, reviews: 276, image: 'https://images.unsplash.com/photo-1616683693504-3c961f1e8f69?w=400&h=400&fit=crop', description: 'Translucent, shine-free finish' },
+            { id: 23, name: 'Lash Serum', category: 'eyes', price: 58, rating: 5, reviews: 312, image: 'https://images.unsplash.com/photo-1631730486572-226d1f595b68?w=400&h=400&fit=crop', badge: 'BESTSELLER', badgeColor: '#c17d5f', description: 'Strengthen and lengthen' },
+            { id: 24, name: 'Eye Cream', category: 'skincare', price: 54, rating: 5, reviews: 267, image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop', description: 'Reduce dark circles and puffiness' }
+        ];
+
+        let currentCategory = 'all';
+        let wishlist = new Set();
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        function updateCartDisplay() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <div class="cart-empty-icon">🛍️</div>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some products to get started!</p>
+                    </div>
+                `;
+                cartTotal.textContent = '$0';
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.textContent = `${total}`;
+
+            cartItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <div class="cart-item-image">${item.icon}</div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-category">${item.category}</div>
+                        <div class="cart-item-price">${item.price}</div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${index})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                updateCartDisplay();
+                
+                // Visual feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '✓ ADDED';
+                button.style.background = '#4CAF50';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 1500);
+
+                // Show cart briefly
+                setTimeout(() => {
+                    toggleCart();
+                }, 600);
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            alert(`Checkout - Total: ${total}\nThank you for your purchase!`);
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById('productsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (productsToRender.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                document.getElementById('resultsCount').textContent = '0 Products';
+                document.getElementById('pagination').style.display = 'none';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            document.getElementById('pagination').style.display = 'flex';
+            document.getElementById('resultsCount').textContent = `${productsToRender.length} Products`;
+
+            // Pagination logic
+            const totalPages = Math.ceil(productsToRender.length / productsPerPage);
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const paginatedProducts = productsToRender.slice(startIndex, endIndex);
+
+            // Update pagination buttons
+            updatePaginationButtons(totalPages);
+
+            grid.innerHTML = paginatedProducts.map(product => `
+                <div class="product-card" data-category="${product.category}" data-price="${product.price}" data-rating="${product.rating}">
+                    ${product.badge ? `<div class="product-badge" style="${product.badgeColor ? 'background: ' + product.badgeColor : ''}">${product.badge}</div>` : ''}
+                    <button class="wishlist-btn" onclick="toggleWishlist(${product.id})" id="wish-${product.id}">🤍</button>
+                    <div class="product-image-wrapper">
+                        <div class="product-image">${product.icon}</div>
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        ${product.colors ? `
+                            <div class="product-colors">
+                                ${product.colors.slice(0, 3).map(color => `<span class="color-dot" style="background: ${color};"></span>`).join('')}
+                                ${product.colors.length > 3 ? `<span style="font-size: 0.75rem; color: #999;">+${product.colors.length - 3} more</span>` : ''}
+                            </div>
+                        ` : ''}
+                        <div class="product-rating">${'⭐'.repeat(product.rating)} <span>(${product.reviews})</span></div>
+                        <div class="product-price">${product.price}</div>
+                        <button class="add-cart" onclick="addToCart(${product.id})">ADD TO CART</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Scroll to top of products
+            window.scrollTo({ top: 300, behavior: 'smooth' });
+        }
+
+        function updatePaginationButtons(totalPages) {
+            const pagination = document.getElementById('pagination');
+            
+            pagination.innerHTML = `
+                <button class="page-btn" onclick="changePage('prev')" ${currentPage === 1 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>←</button>
+                ${Array.from({ length: totalPages }, (_, i) => i + 1).map(page => `
+                    <button class="page-btn ${page === currentPage ? 'active' : ''}" onclick="changePage(${page})">${page}</button>
+                `).join('')}
+                <button class="page-btn" onclick="changePage('next')" ${currentPage === totalPages ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>→</button>
+            `;
+        }
+
+        function changePage(page) {
+            const allProducts = getFilteredProducts();
+            const totalPages = Math.ceil(allProducts.length / productsPerPage);
+
+            if (page === 'prev' && currentPage > 1) {
+                currentPage--;
+            } else if (page === 'next' && currentPage < totalPages) {
+                currentPage++;
+            } else if (typeof page === 'number' && page >= 1 && page <= totalPages) {
+                currentPage = page;
+            } else {
+                return; // Invalid page
+            }
+
+            renderProducts(allProducts);
+        }
+
+        function getFilteredProducts() {
+            let filtered = [...products];
+
+            // Category filter
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+
+            // Search filter
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (searchTerm) {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(searchTerm) ||
+                    p.description.toLowerCase().includes(searchTerm) ||
+                    p.category.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            // Price filter
+            const priceFilter = document.getElementById('priceFilter').value;
+            if (priceFilter === 'under30') {
+                filtered = filtered.filter(p => p.price < 30);
+            } else if (priceFilter === '30to50') {
+                filtered = filtered.filter(p => p.price >= 30 && p.price <= 50);
+            } else if (priceFilter === 'over50') {
+                filtered = filtered.filter(p => p.price > 50);
+            }
+
+            // Sort
+            const sortBy = document.getElementById('sortBy').value;
+            if (sortBy === 'price-low') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sortBy === 'price-high') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else if (sortBy === 'rating') {
+                filtered.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
+            } else if (sortBy === 'newest') {
+                filtered = filtered.filter(p => p.badge === 'NEW').concat(filtered.filter(p => p.badge !== 'NEW'));
+            }
+
+            return filtered;
+        }
+
+        function filterProducts(category) {
+            currentCategory = category;
+            currentPage = 1; // Reset to first page
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            applyFilters();
+        }
+
+        function searchProducts() {
+            currentPage = 1; // Reset to first page
+            applyFilters();
+        }
+
+        function applyFilters() {
+            currentPage = 1; // Reset to first page when filtering
+            const filtered = getFilteredProducts();
+            renderProducts(filtered);
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                updateCartDisplay();
+                
+                // Visual feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '✓ ADDED';
+                button.style.background = '#4CAF50';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 1500);
+
+                // Show cart briefly
+                setTimeout(() => {
+                    toggleCart();
+                }, 600);
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            alert(`Checkout - Total: ${total}\nThank you for your purchase!`);
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        function toggleWishlist(productId) {
+            const btn = document.getElementById(`wish-${productId}`);
+            if (wishlist.has(productId)) {
+                wishlist.delete(productId);
+                btn.textContent = '🤍';
+                btn.classList.remove('active');
+            } else {
+                wishlist.add(productId);
+                btn.textContent = '❤️';
+                btn.classList.add('active');
+            }
+        }
+
+        // Initial render
+        renderProducts(products);
+    </script>
 </body>
 </html>
