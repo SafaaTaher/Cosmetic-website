@@ -1,310 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Radiance Beauty - Premium Cosmetics</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+     
     <script src="script.js" defer></script>
   </head>
-<body>
+  <body>
     <header>
-        <div class="logo">RADIANCE</div>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-        <nav>
-            <a href="index.html" class="nav-text" data-en="HOME" data-ar="الرئيسية">HOME</a>
-            <a href="Products.html" class="nav-text" data-en="PRODUCTS" data-ar="المنتجات">PRODUCTS</a>
-            <a href="#about" class="nav-text" data-en="ABOUT" data-ar="من نحن">ABOUT</a>
-            <a href="#contact" class="nav-text" data-en="CONTACT" data-ar="اتصل بنا">CONTACT</a>
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="Search products..." data-placeholder-en="Search products..." data-placeholder-ar="ابحث عن المنتجات...">
-                <button class="search-btn">🔍</button>
-            </div>
-            <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
-        </nav>
-        <div class="mobile-nav" id="mobileNav">
-            <a href="#home" class="nav-text" data-en="HOME" data-ar="الرئيسية" onclick="toggleMobileMenu()">HOME</a>
-            <a href="#products" class="nav-text" data-en="PRODUCTS" data-ar="المنتجات" onclick="toggleMobileMenu()">PRODUCTS</a>
-            <a href="#about" class="nav-text" data-en="ABOUT" data-ar="من نحن" onclick="toggleMobileMenu()">ABOUT</a>
-            <a href="#contact" class="nav-text" data-en="CONTACT" data-ar="اتصل بنا" onclick="toggleMobileMenu()">CONTACT</a>
-            <div class="search-box" style="width: 100%;">
-                <input type="text" class="search-input mobile-search" placeholder="Search products..." data-placeholder-en="Search products..." data-placeholder-ar="ابحث عن المنتجات..." style="width: 100%;">
-                <button class="search-btn">🔍</button>
-            </div>
-            <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+      <div class="logo">RADIANCE</div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      <nav>
+        <a href="index.html" class="nav-text" data-en="HOME" data-ar="الرئيسية"
+          >HOME</a
+        >
+        <a
+          href="Products.html"
+          class="nav-text"
+          data-en="PRODUCTS"
+          data-ar="المنتجات"
+          >PRODUCTS</a
+        >
+        <a href="#about" class="nav-text" data-en="ABOUT" data-ar="من نحن"
+          >ABOUT</a
+        >
+        <a href="#contact" class="nav-text" data-en="CONTACT" data-ar="اتصل بنا"
+          >CONTACT</a
+        >
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search products..."
+            data-placeholder-en="Search products..."
+            data-placeholder-ar="ابحث عن المنتجات..."
+          />
+          <button class="search-btn">🔍</button>
         </div>
+        <div class="cart-icon" onclick="toggleCart()">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav">
+        <a
+          href="index.html"
+          class="nav-text"
+          data-en="HOME"
+          data-ar="الرئيسية"
+          onclick="toggleMobileMenu()"
+          >HOME</a
+        >
+        <a
+          href="Products.html"
+          class="nav-text"
+          data-en="PRODUCTS"
+          data-ar="المنتجات"
+          onclick="toggleMobileMenu()"
+          >PRODUCTS</a
+        >
+        <a
+          href="#about"
+          class="nav-text"
+          data-en="ABOUT"
+          data-ar="من نحن"
+          onclick="toggleMobileMenu()"
+          >ABOUT</a
+        >
+        <a
+          href="#contact"
+          class="nav-text"
+          data-en="CONTACT"
+          data-ar="اتصل بنا"
+          onclick="toggleMobileMenu()"
+          >CONTACT</a
+        >
+        <div class="search-box" style="width: 100%">
+          <input
+            type="text"
+            class="search-input mobile-search"
+            placeholder="Search products..."
+            data-placeholder-en="Search products..."
+            data-placeholder-ar="ابحث عن المنتجات..."
+            style="width: 100%"
+          />
+          <button class="search-btn">🔍</button>
+        </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+      </div>
     </header>
 
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title" data-en="Unveil Your Natural Beauty" data-ar="اكتشفي جمالك الطبيعي">Unveil Your Natural Beauty</h1>
-            <p class="hero-desc" data-en="Discover premium cosmetics crafted with the finest ingredients to enhance your natural radiance." data-ar="اكتشفي مستحضرات التجميل الفاخرة المصنوعة بأجود المكونات لتعزيز إشراقتك الطبيعية.">Discover premium cosmetics crafted with the finest ingredients to enhance your natural radiance.</p>
-            <a href="#products" class="cta-button" data-en="SHOP NOW" data-ar="تسوق الآن">SHOP NOW</a>
-        </div>
-        <div class="hero-image">
-            <div class="product-circle">
-                <div class="cream-bottle">
-                    <div class="bottle-cap"></div>
-                    <div class="bottle-body">
-                        <div class="bottle-shine"></div>
-                        <div class="bottle-label">
-                            <div class="cream-name">RADIANCE</div>
-                            <div class="cream-type">PREMIUM CREAM</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="hero-content">
+        <h1
+          class="hero-title"
+          data-en="Unveil Your Natural Beauty"
+          data-ar="اكتشفي جمالك الطبيعي"
+        >
+          Unveil Your Natural Beauty
+        </h1>
+        <p
+          class="hero-desc"
+          data-en="Discover premium cosmetics crafted with the finest ingredients to enhance your natural radiance."
+          data-ar="اكتشفي مستحضرات التجميل الفاخرة المصنوعة بأجود المكونات لتعزيز إشراقتك الطبيعية."
+        >
+          Discover premium cosmetics crafted with the finest ingredients to
+          enhance your natural radiance.
+        </p>
+        <a
+          href="#products"
+          class="cta-button"
+          data-en="SHOP NOW"
+          data-ar="تسوق الآن"
+          >SHOP NOW</a
+        >
+      </div>
+      <div class="hero-image">
+        <div class="product-circle">
+          <div class="cream-bottle">
+            <div class="bottle-cap"></div>
+            <div class="bottle-body">
+              <div class="bottle-shine"></div>
+              <div class="bottle-label">
+                <div class="cream-name">RADIANCE</div>
+                <div class="cream-type">PREMIUM CREAM</div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="features">
-        <h2 class="section-title" data-en="Why Choose Radiance" data-ar="لماذا تختارين لوكس">Why Choose Radiance</h2>
-        <p class="section-subtitle" data-en="Premium quality that speaks for itself" data-ar="جودة فاخرة تتحدث عن نفسها">Premium quality that speaks for itself</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <img src="https://cdn.vectorstock.com/i/750p/78/07/dermatologically-tested-stamp-set-grunge-style-vector-57987807.avif" alt="Dermatologist Tested" class="feature-image">
-                <h3 data-en="Dermatologist Tested" data-ar="معتمد من أطباء الجلدية">Dermatologist Tested</h3>
-                <p data-en="Clinically tested formulas safe for all skin types and tones." data-ar="تركيبات مختبرة سريرياً آمنة لجميع أنواع البشرة وألوانها.">Clinically tested formulas safe for all skin types and tones.</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=300&fit=crop" alt="Luxury Experience" class="feature-image">
-                <h3 data-en="Luxury Experience" data-ar="تجربة فاخرة">Luxury Experience</h3>
-                <p data-en="Indulge in premium textures and sophisticated fragrances." data-ar="استمتعي بقوام فاخر وعطور راقية.">Indulge in premium textures and sophisticated fragrances.</p>
-            </div>
+      <h2
+        class="section-title"
+        data-en="Why Choose Radiance"
+        data-ar="لماذا تختارين لوكس"
+      >
+        Why Choose Radiance
+      </h2>
+      <p
+        class="section-subtitle"
+        data-en="Premium quality that speaks for itself"
+        data-ar="جودة فاخرة تتحدث عن نفسها"
+      >
+        Premium quality that speaks for itself
+      </p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img
+            src="https://cdn.vectorstock.com/i/750p/78/07/dermatologically-tested-stamp-set-grunge-style-vector-57987807.avif"
+            alt="Dermatologist Tested"
+            class="feature-image"
+          />
+          <h3 data-en="Dermatologist Tested" data-ar="معتمد من أطباء الجلدية">
+            Dermatologist Tested
+          </h3>
+          <p
+            data-en="Clinically tested formulas safe for all skin types and tones."
+            data-ar="تركيبات مختبرة سريرياً آمنة لجميع أنواع البشرة وألوانها."
+          >
+            Clinically tested formulas safe for all skin types and tones.
+          </p>
         </div>
+        <div class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=300&fit=crop"
+            alt="Luxury Experience"
+            class="feature-image"
+          />
+          <h3 data-en="Luxury Experience" data-ar="تجربة فاخرة">
+            Luxury Experience
+          </h3>
+          <p
+            data-en="Indulge in premium textures and sophisticated fragrances."
+            data-ar="استمتعي بقوام فاخر وعطور راقية."
+          >
+            Indulge in premium textures and sophisticated fragrances.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="products" id="products">
-        <h2 class="section-title">Our Products</h2>
-        <p class="section-subtitle">Curated collection for every beauty need</p>
-        
-        <!-- Filter Tabs -->
-        <div class="filter-tabs">
-            <button class="filter-tab active" onclick="filterProducts('all')">All Products</button>
-            <button class="filter-tab" onclick="filterProducts('lips')">Lips</button>
-            <button class="filter-tab" onclick="filterProducts('face')">Face</button>
-            <button class="filter-tab" onclick="filterProducts('eyes')">Eyes</button>
-            <button class="filter-tab" onclick="filterProducts('skincare')">Skincare</button>
+      <h2 class="section-title">Top-Rated Beauty Picks</h2>
+      <p class="section-subtitle">
+        Curated fan-favourites to elevate your glow
+      </p>
+
+      
+
+      <div class="products-grid">
+        <div class="product-card" data-category="lips">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">💄</div>
+          <h3>Velvet Matte Lipstick</h3>
+          <p>Long-lasting, highly pigmented formula</p>
+          <div class="product-colors">
+            <span
+              class="color-dot"
+              style="background: #8b2635"
+              title="Berry"
+            ></span>
+            <span
+              class="color-dot"
+              style="background: #c85a54"
+              title="Rose"
+            ></span>
+            <span
+              class="color-dot"
+              style="background: #a0522d"
+              title="Nude"
+            ></span>
+            <span
+              class="color-dot"
+              style="background: #dc143c"
+              title="Red"
+            ></span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(245)</span></div>
+          <div class="product-price">$28</div>
+          <button class="add-cart">ADD TO CART</button>
         </div>
 
-        <div class="products-grid">
-            <div class="product-card" data-category="lips">
-                <div class="product-badge">NEW</div>
-                <div class="product-image">💄</div>
-                <h3>Velvet Matte Lipstick</h3>
-                <p>Long-lasting, highly pigmented formula</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: #8B2635;" title="Berry"></span>
-                    <span class="color-dot" style="background: #C85A54;" title="Rose"></span>
-                    <span class="color-dot" style="background: #A0522D;" title="Nude"></span>
-                    <span class="color-dot" style="background: #DC143C;" title="Red"></span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(245)</span></div>
-                <div class="product-price">$28</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-            
-            <div class="product-card" data-category="face">
-                <div class="product-image">✨</div>
-                <h3>Radiance Foundation</h3>
-                <p>Flawless, buildable coverage</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: #F5D5C0;"></span>
-                    <span class="color-dot" style="background: #E8B897;"></span>
-                    <span class="color-dot" style="background: #D4A574;"></span>
-                    <span class="color-dot" style="background: #8D5524;"></span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(312)</span></div>
-                <div class="product-price">$42</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-            
-            <div class="product-card" data-category="eyes">
-                <div class="product-badge" style="background: #c17d5f;">BESTSELLER</div>
-                <div class="product-image">👁️</div>
-                <h3>Radiance Eye Palette</h3>
-                <p>12 versatile shades for any look</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: linear-gradient(135deg, #8B7355, #D4A574, #E8B897);"></span>
-                    <span style="font-size: 0.75rem; color: #999;">+11 more</span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(428)</span></div>
-                <div class="product-price">$58</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-            
-            <div class="product-card" data-category="face">
-                <div class="product-image">🌸</div>
-                <h3>Dewy Setting Spray</h3>
-                <p>All-day lasting finish with radiance</p>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(189)</span></div>
-                <div class="product-price">$32</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="lips">
-                <div class="product-image">💋</div>
-                <h3>Radiance Lip Gloss</h3>
-                <p>High-shine, non-sticky formula</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: #FFB6C1;"></span>
-                    <span class="color-dot" style="background: #FF69B4;"></span>
-                    <span class="color-dot" style="background: #C17D5F;"></span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐ <span>(156)</span></div>
-                <div class="product-price">$24</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="face">
-                <div class="product-badge">NEW</div>
-                <div class="product-image">🎨</div>
-                <h3>Blush & Contour Duo</h3>
-                <p>Sculpt and define effortlessly</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: #FFC0CB;"></span>
-                    <span class="color-dot" style="background: #FFB6A3;"></span>
-                    <span class="color-dot" style="background: #E8B897;"></span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(203)</span></div>
-                <div class="product-price">$38</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="eyes">
-                <div class="product-image">✏️</div>
-                <h3>Precision Eyeliner</h3>
-                <p>Waterproof, smudge-proof formula</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: #000;"></span>
-                    <span class="color-dot" style="background: #2F4F4F;"></span>
-                    <span class="color-dot" style="background: #8B4513;"></span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(278)</span></div>
-                <div class="product-price">$22</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="skincare">
-                <div class="product-badge" style="background: #c17d5f;">BESTSELLER</div>
-                <div class="product-image">🧴</div>
-                <h3>Hydrating Serum</h3>
-                <p>Deep moisture with vitamin C</p>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(392)</span></div>
-                <div class="product-price">$56</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="skincare">
-                <div class="product-image">☀️</div>
-                <h3>SPF 50 Day Cream</h3>
-                <p>Sun protection with nourishment</p>
-                <div class="product-rating">⭐⭐⭐⭐ <span>(167)</span></div>
-                <div class="product-price">$44</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="eyes">
-                <div class="product-image">👀</div>
-                <h3>Volume Mascara</h3>
-                <p>Dramatic length and volume</p>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(341)</span></div>
-                <div class="product-price">$26</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="face">
-                <div class="product-image">💫</div>
-                <h3>Illuminating Highlighter</h3>
-                <p>Radiant glow for all skin tones</p>
-                <div class="product-colors">
-                    <span class="color-dot" style="background: linear-gradient(135deg, #FFE4B5, #F0E68C);"></span>
-                    <span class="color-dot" style="background: linear-gradient(135deg, #FFB6C1, #FFC0CB);"></span>
-                </div>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(289)</span></div>
-                <div class="product-price">$34</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
-
-            <div class="product-card" data-category="skincare">
-                <div class="product-badge">NEW</div>
-                <div class="product-image">🌙</div>
-                <h3>Night Repair Cream</h3>
-                <p>Regenerate while you sleep</p>
-                <div class="product-rating">⭐⭐⭐⭐⭐ <span>(215)</span></div>
-                <div class="product-price">$62</div>
-                <button class="add-cart">ADD TO CART</button>
-            </div>
+        <div class="product-card" data-category="face">
+          <div class="product-image">✨</div>
+          <h3>Radiance Foundation</h3>
+          <p>Flawless, buildable coverage</p>
+          <div class="product-colors">
+            <span class="color-dot" style="background: #f5d5c0"></span>
+            <span class="color-dot" style="background: #e8b897"></span>
+            <span class="color-dot" style="background: #d4a574"></span>
+            <span class="color-dot" style="background: #8d5524"></span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(312)</span></div>
+          <div class="product-price">$42</div>
+          <button class="add-cart">ADD TO CART</button>
         </div>
+
+        <div class="product-card" data-category="eyes">
+          <div class="product-badge" style="background: #c17d5f">
+            BESTSELLER
+          </div>
+          <div class="product-image">👁️</div>
+          <h3>Radiance Eye Palette</h3>
+          <p>12 versatile shades for any look</p>
+          <div class="product-colors">
+            <span
+              class="color-dot"
+              style="
+                background: linear-gradient(135deg, #8b7355, #d4a574, #e8b897);
+              "
+            ></span>
+            <span style="font-size: 0.75rem; color: #999">+11 more</span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(428)</span></div>
+          <div class="product-price">$58</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="face">
+          <div class="product-image">🌸</div>
+          <h3>Dewy Setting Spray</h3>
+          <p>All-day lasting finish with radiance</p>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(189)</span></div>
+          <div class="product-price">$32</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="lips">
+          <div class="product-image">💋</div>
+          <h3>Radiance Lip Gloss</h3>
+          <p>High-shine, non-sticky formula</p>
+          <div class="product-colors">
+            <span class="color-dot" style="background: #ffb6c1"></span>
+            <span class="color-dot" style="background: #ff69b4"></span>
+            <span class="color-dot" style="background: #c17d5f"></span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐ <span>(156)</span></div>
+          <div class="product-price">$24</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="face">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">🎨</div>
+          <h3>Blush & Contour Duo</h3>
+          <p>Sculpt and define effortlessly</p>
+          <div class="product-colors">
+            <span class="color-dot" style="background: #ffc0cb"></span>
+            <span class="color-dot" style="background: #ffb6a3"></span>
+            <span class="color-dot" style="background: #e8b897"></span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(203)</span></div>
+          <div class="product-price">$38</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="eyes">
+          <div class="product-image">✏️</div>
+          <h3>Precision Eyeliner</h3>
+          <p>Waterproof, smudge-proof formula</p>
+          <div class="product-colors">
+            <span class="color-dot" style="background: #000"></span>
+            <span class="color-dot" style="background: #2f4f4f"></span>
+            <span class="color-dot" style="background: #8b4513"></span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(278)</span></div>
+          <div class="product-price">$22</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="skincare">
+          <div class="product-badge" style="background: #c17d5f">
+            BESTSELLER
+          </div>
+          <div class="product-image">🧴</div>
+          <h3>Hydrating Serum</h3>
+          <p>Deep moisture with vitamin C</p>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(392)</span></div>
+          <div class="product-price">$56</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="skincare">
+          <div class="product-image">☀️</div>
+          <h3>SPF 50 Day Cream</h3>
+          <p>Sun protection with nourishment</p>
+          <div class="product-rating">⭐⭐⭐⭐ <span>(167)</span></div>
+          <div class="product-price">$44</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="eyes">
+          <div class="product-image">👀</div>
+          <h3>Volume Mascara</h3>
+          <p>Dramatic length and volume</p>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(341)</span></div>
+          <div class="product-price">$26</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="face">
+          <div class="product-image">💫</div>
+          <h3>Illuminating Highlighter</h3>
+          <p>Radiant glow for all skin tones</p>
+          <div class="product-colors">
+            <span
+              class="color-dot"
+              style="background: linear-gradient(135deg, #ffe4b5, #f0e68c)"
+            ></span>
+            <span
+              class="color-dot"
+              style="background: linear-gradient(135deg, #ffb6c1, #ffc0cb)"
+            ></span>
+          </div>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(289)</span></div>
+          <div class="product-price">$34</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card" data-category="skincare">
+          <div class="product-badge">NEW</div>
+          <div class="product-image">🌙</div>
+          <h3>Night Repair Cream</h3>
+          <p>Regenerate while you sleep</p>
+          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(215)</span></div>
+          <div class="product-price">$62</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+      </div>
     </section>
 
     <section class="testimonials">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-subtitle">Real reviews from real beauty lovers</p>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="quote">"</div>
-                <p class="testimonial-text">The quality is absolutely incredible! My skin has never looked better. I'm obsessed with every product.</p>
-                <div class="testimonial-author">Sarah M.</div>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote">"</div>
-                <p class="testimonial-text">Finally found a brand that understands luxury and sustainability. Worth every penny!</p>
-                <div class="testimonial-author">Jessica K.</div>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote">"</div>
-                <p class="testimonial-text">The lipstick stays on all day without drying my lips. Best cosmetics I've ever used!</p>
-                <div class="testimonial-author">Emily R.</div>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-            </div>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Real reviews from real beauty lovers</p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="quote">"</div>
+          <p class="testimonial-text">
+            The quality is absolutely incredible! My skin has never looked
+            better. I'm obsessed with every product.
+          </p>
+          <div class="testimonial-author">Sarah M.</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
         </div>
+        <div class="testimonial-card">
+          <div class="quote">"</div>
+          <p class="testimonial-text">
+            Finally found a brand that understands luxury and sustainability.
+            Worth every penny!
+          </p>
+          <div class="testimonial-author">Jessica K.</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote">"</div>
+          <p class="testimonial-text">
+            The lipstick stays on all day without drying my lips. Best cosmetics
+            I've ever used!
+          </p>
+          <div class="testimonial-author">Emily R.</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="footer-content" id="contact">
-            <div class="footer-section">
-                <h4>ABOUT Radiance</h4>
-                <p>Premium cosmetics designed to enhance your natural beauty with sustainable, cruelty-free formulas.</p>
-            </div>
-            <div class="footer-section">
-                <h4>QUICK LINKS</h4>
-                <a href="#products">Products</a>
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact</a>
-                <a href="#faq">FAQ</a>
-            </div>
-            <div class="footer-section">
-                <h4>FOLLOW US</h4>
-                <div class="social-icons">
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Telegram">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+      <div class="footer-content" id="contact">
+        <div class="footer-section">
+          <h4>ABOUT Radiance</h4>
+          <p>
+            Premium cosmetics designed to enhance your natural beauty with
+            sustainable, cruelty-free formulas.
+          </p>
         </div>
-        <div class="copyright">
-            © 2025 Radiance Beauty. All rights reserved.
+        <div class="footer-section">
+          <h4>QUICK LINKS</h4>
+          <a href="#products">Products</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a href="#faq">FAQ</a>
         </div>
+        <div class="footer-section">
+          <h4>FOLLOW US</h4>
+          <div class="social-icons">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Telegram">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2025 Radiance Beauty. All rights reserved.</div>
     </footer>
-
-
-    
-</body>
+  </body>
 </html>

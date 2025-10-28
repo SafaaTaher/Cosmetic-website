@@ -1,4 +1,4 @@
-       * {
+             * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -316,8 +316,14 @@
         }
 
         @media (max-width: 1200px) {
+          .logo {
+                font-size: 1.5rem;
+            }
             .hero-content h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
+            }
+            .nav a {
+                font-size: 0.8rem;
             }
 
             .hero-image {
@@ -346,7 +352,10 @@
             }
 
             .cream-name {
-                font-size: 1.8rem;
+                font-size: 0.9rem;
+            }
+            .cream-type {
+                font-size: 0.7rem;
             }
         }
 
@@ -447,11 +456,11 @@
             }
 
             .cream-name {
-                font-size: 1.5rem;
+                font-size: 0.7rem;
             }
 
             .cream-type {
-                font-size: 0.75rem;
+                font-size: 0.5rem;
             }
 
             .section-title {
@@ -615,37 +624,7 @@
             background: linear-gradient(135deg, #fef5ef 0%, #f9e8dc 100%);
         }
 
-        .filter-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-tab {
-            padding: 0.8rem 2rem;
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            color: #666;
-        }
-
-        .filter-tab:hover {
-            border-color: #d4a574;
-            color: #2d2d2d;
-        }
-
-        .filter-tab.active {
-            background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
-            color: white;
-            border-color: transparent;
-        }
-
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -878,3 +857,4 @@
             border-top: 1px solid #444;
             color: #999;
         }
+  
