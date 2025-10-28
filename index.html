@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-     
+
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -31,9 +31,8 @@
         <a href="#about" class="nav-text" data-en="ABOUT" data-ar="من نحن"
           >ABOUT</a
         >
-        <a href="#contact" class="nav-text" data-en="CONTACT" data-ar="اتصل بنا"
-          >CONTACT</a
-        >
+        <a href="contact.html" class="nav-text">CONTACT</a>
+        <a href="login.html" class="nav-text">LOGIN</a>
         <div class="search-box">
           <input
             type="text"
@@ -80,9 +79,18 @@
           href="#contact"
           class="nav-text"
           data-en="CONTACT"
-          data-ar="اتصل بنا"
+          data-ar="تواصل معنا "
           onclick="toggleMobileMenu()"
           >CONTACT</a
+        >
+
+        <a
+          href="Login.html"
+          class="nav-text"
+          data-en="LOGIN"
+          data-ar="تسجيل الدخول"
+          onclick="toggleMobileMenu()"
+          >LOGIN</a
         >
         <div class="search-box" style="width: 100%">
           <input
@@ -188,198 +196,170 @@
             Indulge in premium textures and sophisticated fragrances.
           </p>
         </div>
-      </div>
-    </section>
-
-    <section class="products" id="products">
-      <h2 class="section-title">Top-Rated Beauty Picks</h2>
-      <p class="section-subtitle">
-        Curated fan-favourites to elevate your glow
-      </p>
-
-      
-
-      <div class="products-grid">
-        <div class="product-card" data-category="lips">
-          <div class="product-badge">Best Seller</div>
-          <div class="product-image">💄</div>
-          <h3>Velvet Matte Lipstick</h3>
-          <p>Long-lasting, highly pigmented formula</p>
-          <div class="product-colors">
-            <span
-              class="color-dot"
-              style="background: #8b2635"
-              title="Berry"
-            ></span>
-            <span
-              class="color-dot"
-              style="background: #c85a54"
-              title="Rose"
-            ></span>
-            <span
-              class="color-dot"
-              style="background: #a0522d"
-              title="Nude"
-            ></span>
-            <span
-              class="color-dot"
-              style="background: #dc143c"
-              title="Red"
-            ></span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(245)</span></div>
-          <div class="product-price">$28</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="face">
-          <div class="product-image">✨</div>
-          <h3>Radiance Foundation</h3>
-          <p>Flawless, buildable coverage</p>
-          <div class="product-colors">
-            <span class="color-dot" style="background: #f5d5c0"></span>
-            <span class="color-dot" style="background: #e8b897"></span>
-            <span class="color-dot" style="background: #d4a574"></span>
-            <span class="color-dot" style="background: #8d5524"></span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(312)</span></div>
-          <div class="product-price">$42</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="eyes">
-          <div class="product-badge" style="background: #c17d5f">
-            BESTSELLER
-          </div>
-          <div class="product-image">👁️</div>
-          <h3>Radiance Eye Palette</h3>
-          <p>12 versatile shades for any look</p>
-          <div class="product-colors">
-            <span
-              class="color-dot"
-              style="
-                background: linear-gradient(135deg, #8b7355, #d4a574, #e8b897);
-              "
-            ></span>
-            <span style="font-size: 0.75rem; color: #999">+11 more</span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(428)</span></div>
-          <div class="product-price">$58</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="face">
-          <div class="product-image">🌸</div>
-          <h3>Dewy Setting Spray</h3>
-          <p>All-day lasting finish with radiance</p>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(189)</span></div>
-          <div class="product-price">$32</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="lips">
-          <div class="product-image">💋</div>
-          <h3>Radiance Lip Gloss</h3>
-          <p>High-shine, non-sticky formula</p>
-          <div class="product-colors">
-            <span class="color-dot" style="background: #ffb6c1"></span>
-            <span class="color-dot" style="background: #ff69b4"></span>
-            <span class="color-dot" style="background: #c17d5f"></span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐ <span>(156)</span></div>
-          <div class="product-price">$24</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="face">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">🎨</div>
-          <h3>Blush & Contour Duo</h3>
-          <p>Sculpt and define effortlessly</p>
-          <div class="product-colors">
-            <span class="color-dot" style="background: #ffc0cb"></span>
-            <span class="color-dot" style="background: #ffb6a3"></span>
-            <span class="color-dot" style="background: #e8b897"></span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(203)</span></div>
-          <div class="product-price">$38</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="eyes">
-          <div class="product-image">✏️</div>
-          <h3>Precision Eyeliner</h3>
-          <p>Waterproof, smudge-proof formula</p>
-          <div class="product-colors">
-            <span class="color-dot" style="background: #000"></span>
-            <span class="color-dot" style="background: #2f4f4f"></span>
-            <span class="color-dot" style="background: #8b4513"></span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(278)</span></div>
-          <div class="product-price">$22</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="skincare">
-          <div class="product-badge" style="background: #c17d5f">
-            BESTSELLER
-          </div>
-          <div class="product-image">🧴</div>
-          <h3>Hydrating Serum</h3>
-          <p>Deep moisture with vitamin C</p>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(392)</span></div>
-          <div class="product-price">$56</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="skincare">
-          <div class="product-image">☀️</div>
-          <h3>SPF 50 Day Cream</h3>
-          <p>Sun protection with nourishment</p>
-          <div class="product-rating">⭐⭐⭐⭐ <span>(167)</span></div>
-          <div class="product-price">$44</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="eyes">
-          <div class="product-image">👀</div>
-          <h3>Volume Mascara</h3>
-          <p>Dramatic length and volume</p>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(341)</span></div>
-          <div class="product-price">$26</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="face">
-          <div class="product-image">💫</div>
-          <h3>Illuminating Highlighter</h3>
-          <p>Radiant glow for all skin tones</p>
-          <div class="product-colors">
-            <span
-              class="color-dot"
-              style="background: linear-gradient(135deg, #ffe4b5, #f0e68c)"
-            ></span>
-            <span
-              class="color-dot"
-              style="background: linear-gradient(135deg, #ffb6c1, #ffc0cb)"
-            ></span>
-          </div>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(289)</span></div>
-          <div class="product-price">$34</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-
-        <div class="product-card" data-category="skincare">
-          <div class="product-badge">NEW</div>
-          <div class="product-image">🌙</div>
-          <h3>Night Repair Cream</h3>
-          <p>Regenerate while you sleep</p>
-          <div class="product-rating">⭐⭐⭐⭐⭐ <span>(215)</span></div>
-          <div class="product-price">$62</div>
-          <button class="add-cart">ADD TO CART</button>
+        <div class="feature-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNIBQqs6xWd6diTlJfdLaRYR8Kw3yzEcu4VQ&s"
+            alt="Sustainable Beauty"
+            class="feature-image"
+          />
+          <h3
+          data-en="Sustainable Beauty" data-ar="الجمال المستدام "
+          >Sustainable Beauty</h3>
+          <p data-en="Eco-friendly packaging crafted with love for the planet."
+            data-ar="عبوات صديقة للبيئة مصنوعة بحب للكوكب"
+          >Eco-friendly packaging crafted with love for the planet.</p>
         </div>
       </div>
     </section>
+
+    <section class="categories">
+  <h2 class="section-title">Explore Our Collections</h2>
+  <p class="section-subtitle">Find your glow across our curated beauty lines</p>
+
+  <div class="categories-grid">
+    <div class="category-card">
+      <div class="category-image">
+        <img
+          src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=400&fit=crop"
+          alt="Lips Category"
+        />
+      </div>
+      <h3>Lips</h3>
+      <p>Long-lasting colors and velvety finishes for perfect lips.</p>
+      <a href="Products.html#lips">Shop Lips</a>
+    </div>
+
+    <div class="category-card">
+      <div class="category-image">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="Face Category"
+        />
+      </div>
+      <h3>Face</h3>
+      <p>Foundations, blushes, and highlighters that define your beauty.</p>
+      <a href="Products.html#face">Shop Face</a>
+    </div>
+
+    <div class="category-card">
+      <div class="category-image">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="Eyes Category"
+        />
+      </div>
+      <h3>Eyes</h3>
+      <p>Bold mascaras and flawless palettes for captivating eyes.</p>
+      <a href="Products.html#eyes">Shop Eyes</a>
+    </div>
+
+    <div class="category-card">
+      <div class="category-image">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARFg0vemTl125KdcbcfEvDwPLMjoym8UAEw&s"
+          alt="Skincare Category"
+        />
+      </div>
+      <h3>Skincare</h3>
+      <p>Hydrating serums and creams for naturally radiant skin.</p>
+      <a href="Products.html#skincare">Shop Skincare</a>
+    </div>
+  </div>
+</section>
+
+    <!-- TOP PRODUCTS -->
+<section class="products" id="products">
+  <h2 class="section-title">Top-Rated Beauty Picks</h2>
+  <p class="section-subtitle">Fan favourites loved by our radiant community</p>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-badge">Best Seller</div>
+      <div class="product-img">
+        <img
+          src="https://zacshop.com/cdn/shop/files/f1311a937a230b8f273391148d726e8b.jpg?v=1712171763"
+          alt="Velvet Matte Lipstick"
+        />
+      </div>
+      <h3>Velvet Matte Lipstick</h3>
+      <p>Highly pigmented, long-lasting shine</p>
+      <div class="product-price">$28</div>
+      <button class="add-cart">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img
+          src="https://www.wyconcosmetics.com/cdn/shop/files/wycon_radiance_N10_2.jpg?v=1756828454"
+          alt="Radiance Foundation"
+        />
+      </div>
+      <h3>Radiance Foundation</h3>
+      <p>Flawless, buildable coverage</p>
+      <div class="product-price">$42</div>
+      <button class="add-cart">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge" style="background:#c17d5f">Bestseller</div>
+      <div class="product-img">
+        <img
+          src="https://meriumpervaiz.com/cdn/shop/files/DSC05428.jpg?v=1713460027&width=1946"
+          alt="Radiance Eye Palette"
+        />
+      </div>
+      <h3>Radiance Eye Palette</h3>
+      <p>Versatile shades for day or night</p>
+      <div class="product-price">$58</div>
+      <button class="add-cart">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW7GBCmuUkuF0yICXtl4NAeDFTF_QPK3bwVvtc3J_vfW0Amh2D5ZyTn2DkrB7-dZGGE4g&usqp=CAU"
+          alt="Hydrating Serum"
+        />
+      </div>
+      <h3>Hydrating Serum</h3>
+      <p>Deep hydration with vitamin C</p>
+      <div class="product-price">$56</div>
+      <button class="add-cart">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img
+          src="https://heavenlyhome.in/wp-content/uploads/2023/09/NIGHT-REPAIR-CREAM.webp"
+          alt="Night Repair Cream"
+        />
+      </div>
+      <h3>Night Repair Cream</h3>
+      <p>Regenerates skin while sleeping</p>
+      <div class="product-price">$62</div>
+      <button class="add-cart">ADD TO CART</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img
+          src="https://i.makeup.ae/s/s5/s5eea2zmpacq.jpg"
+          alt="Illuminating Highlighter"
+        />
+      </div>
+      <h3>Illuminating Highlighter</h3>
+      <p>Bring a natural glow to your look</p>
+      <div class="product-price">$34</div>
+      <button class="add-cart">ADD TO CART</button>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="Products.html" class="cta-button">View All Products</a>
+  </div>
+</section>
+
+<!-- Customer Reviews -->
 
     <section class="testimonials">
       <h2 class="section-title">What Our Customers Say</h2>
@@ -414,7 +394,18 @@
         </div>
       </div>
     </section>
+        <!-- NEWSLETTER CTA -->
+    <section class="newsletter">
+      <h2>Join the Radiance Club 🌸</h2>
+      <p>Be the first to know about new collections, offers, and beauty tips.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
 
+
+    <!-- Footer -->
     <footer>
       <div class="footer-content" id="contact">
         <div class="footer-section">

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Radiance Beauty</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Contact Page Custom Styles */
+
+      body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #fef5ef 0%, #f9e8dc 100%);
+        overflow-x: hidden;
+      }
+
+      .contact-container {
+        padding: 8rem 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .contact-info h2 {
+        font-size: 2.5rem;
+        color: #2d2d2d;
+        margin-bottom: 1rem;
+      }
+
+      .contact-info p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .contact-info .highlight {
+        color: #c17d5f;
+        font-weight: bold;
+      }
+
+      .contact-details {
+        margin-top: 2rem;
+      }
+
+      .contact-details p {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #444;
+        margin-bottom: 0.8rem;
+      }
+
+      .contact-form {
+        flex: 1;
+        min-width: 350px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        padding: 2.5rem;
+      }
+
+      .contact-form h3 {
+        color: #2d2d2d;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #c17d5f;
+      }
+
+      .form-group textarea {
+        resize: none;
+        height: 150px;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+        color: white;
+        border: none;
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.3s;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(193, 125, 95, 0.3);
+      }
+
+      .success-message {
+        margin-top: 1rem;
+        text-align: center;
+        color: green;
+        display: none;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 968px) {
+        .contact-container {
+          flex-direction: column;
+          padding: 6rem 5%;
+        }
+
+        .contact-info,
+        .contact-form {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <script defer>
+      function handleContactSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const successMsg = document.getElementById("successMessage");
+
+        if (!name || !email || !message) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // Simulate form submission success
+        successMsg.style.display = "block";
+        event.target.reset();
+
+        // Hide message after few seconds
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 3000);
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">RADIANCE</div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="Products.html">PRODUCTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html" style="color: #c17d5f;">CONTACT</a>
+        <a href="login.html">LOGIN</a>
+      </nav>
+    </header>
+
+    <section class="contact-container">
+      <div class="contact-info">
+        <h2>Contact Us</h2>
+        <p>
+          We’d love to hear from you! Whether you have questions about our
+          products, orders, or partnership opportunities, our team is ready to
+          help. Reach out and we’ll get back to you as soon as possible.
+        </p>
+
+        <div class="contact-details">
+          <p>📍 <span class="highlight">Address:</span> 123 Glow Street, Dubai, UAE</p>
+          <p>📞 <span class="highlight">Phone:</span> +971 50 123 4567</p>
+          <p>📧 <span class="highlight">Email:</span> support@radiancebeauty.com</p>
+          <p>🕒 <span class="highlight">Hours:</span> Mon - Fri | 9:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="example@radiance.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="Type your message here..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">SEND MESSAGE</button>
+          <div id="successMessage" class="success-message">
+            ✅ Thank you! Your message has been sent.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ABOUT Radiance</h4>
+          <p>
+            Premium cosmetics designed to enhance your natural beauty with
+            sustainable, cruelty-free formulas.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>QUICK LINKS</h4>
+          <a href="Products.html">Products</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-section">
+          <h4>FOLLOW US</h4>
+          <div class="social-icons">
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Telegram">💬</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 Radiance Beauty. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

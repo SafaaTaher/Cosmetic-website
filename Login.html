@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Radiance Beauty</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Extra login page styles */
+
+      body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #fef5ef 0%, #f9e8dc 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .login-logo {
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+      }
+
+      .login-container h5 {
+        margin-bottom: 1.5rem;
+        color: #665b43;
+        opacity: 0.5;
+      }
+
+      .input-group {
+        margin-bottom: 1.2rem;
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .input-group input:focus {
+        border-color: #c17d5f;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 0.9rem;
+        background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.3s;
+      }
+
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(193, 125, 95, 0.3);
+      }
+
+      .extra-links {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .extra-links a {
+        color: #c17d5f;
+        text-decoration: none;
+      }
+
+      .extra-links a:hover {
+        text-decoration: underline;
+      }
+
+      .error-msg {
+        color: red;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        display: none;
+      }
+    </style>
+    <script defer>
+      function handleLogin(event) {
+        event.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const error = document.getElementById("errorMessage");
+
+        if (!email || !password) {
+          error.textContent = "Please fill in all fields.";
+          error.style.display = "block";
+          return;
+        }
+
+        // You can replace this with real authentication logic
+        if (email === "admin@radiance.com" && password === "admin123") {
+          window.location.href = "index.html";
+        } else {
+          error.textContent = "Invalid email or password.";
+          error.style.display = "block";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-logo">RADIANCE</div>
+      <h5>Welcome Back</h5>
+      <form onsubmit="handleLogin(event)">
+        <div class="error-msg" id="errorMessage"></div>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="example@radiance.com"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="submit" class="login-btn">LOGIN</button>
+      </form>
+      <div class="extra-links">
+        <p>
+          Don’t have an account?
+          <a href="#">Sign Up</a>
+        </p>
+        <p><a href="#">Forgot Password?</a></p>
+      </div>
+    </div>
+  </body>
+</html>
