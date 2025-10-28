@@ -414,7 +414,8 @@
             background: white;
             border-bottom: 1px solid #e0e0e0;
             position: relative;  
-            z-index: 100;
+            box-sizing: border-box;
+          
         }
 
         .controls-wrapper {
@@ -509,6 +510,7 @@
             border-color: #d4a574;
             color: #2d2d2d;
         }
+
 
         .filter-tab.active {
             background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
@@ -1115,5 +1117,8 @@
             .filter-tab {
                 flex-shrink: 0;
             }
+            
+
+          
         }
   
