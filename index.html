@@ -9,9 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/Products.css" />
 
-    <script src="script.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+     <script src="TheAllScripts.js" defer></script>
   </head>
   <body>
     <header>
@@ -28,27 +30,16 @@
           data-ar="المنتجات"
           >PRODUCTS</a
         >
-        <a href="#about" class="nav-text" data-en="ABOUT" data-ar="من نحن"
-          >ABOUT</a
-        >
         <a href="contact.html" class="nav-text">CONTACT</a>
         <a href="login.html" class="nav-text">LOGIN</a>
-        <div class="search-box">
-          <input
-            type="text"
-            class="search-input"
-            placeholder="Search products..."
-            data-placeholder-en="Search products..."
-            data-placeholder-ar="ابحث عن المنتجات..."
-          />
-          <button class="search-btn">🔍</button>
-        </div>
+      
         <div class="cart-icon" onclick="toggleCart()">
           🛒
           <span class="cart-count" id="cartCount">0</span>
         </div>
         <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
       </nav>
+    </header>
 
       <div class="mobile-nav" id="mobileNav">
         <a
@@ -67,14 +58,7 @@
           onclick="toggleMobileMenu()"
           >PRODUCTS</a
         >
-        <a
-          href="#about"
-          class="nav-text"
-          data-en="ABOUT"
-          data-ar="من نحن"
-          onclick="toggleMobileMenu()"
-          >ABOUT</a
-        >
+    
         <a
           href="#contact"
           class="nav-text"
@@ -90,22 +74,43 @@
           data-en="LOGIN"
           data-ar="تسجيل الدخول"
           onclick="toggleMobileMenu()"
-          >LOGIN</a
-        >
-        <div class="search-box" style="width: 100%">
-          <input
-            type="text"
-            class="search-input mobile-search"
-            placeholder="Search products..."
-            data-placeholder-en="Search products..."
-            data-placeholder-ar="ابحث عن المنتجات..."
-            style="width: 100%"
-          />
-          <button class="search-btn">🔍</button>
+          >LOGIN</a>
+
+        <div class="mobile-cart" onclick="toggleCart(); toggleMobileMenu();">
+          🛒 Shopping Cart <span class="cart-count" id="cartCountMobile">0</span>
         </div>
-        <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+          <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+
+  
       </div>
-    </header>
+
+        <!-- Cart Overlay -->
+      <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+      <!-- Cart Sidebar -->
+      <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+          <h2>Shopping Cart</h2>
+          <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+          <div class="cart-empty">
+            <div class="cart-empty-icon">🛍️</div>
+            <h3>Your cart is empty</h3>
+            <p>Add some products to get started!</p>
+          </div>
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span class="cart-total-label">Total:</span>
+            <span class="cart-total-amount" id="cartTotal">$0</span>
+          </div>
+          <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
+        </div>
+      </div>
+
+      <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+    
 
     <section class="hero" id="home">
       <div class="hero-content">
@@ -406,7 +411,7 @@
 
 
     <!-- Footer -->
-    <footer>
+<footer>
       <div class="footer-content" id="contact">
         <div class="footer-section">
           <h4>ABOUT Radiance</h4>
@@ -417,47 +422,45 @@
         </div>
         <div class="footer-section">
           <h4>QUICK LINKS</h4>
-          <a href="#products">Products</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
-          <a href="#faq">FAQ</a>
+          <a href="index.html">Home</a>
+          <a href="Products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="Login.html">Login</a>
         </div>
         <div class="footer-section">
           <h4>FOLLOW US</h4>
           <div class="social-icons">
+            <!-- Social Media Links -->
             <a href="#" class="social-link" aria-label="Instagram">
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 1.072.046 2.078.22 2.88.7a5.782 5.782 0 012.121 2.121c.481.802.654 1.808.7 2.88c.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.849c-.046 1.072-.22 2.078-.7 2.88a5.782 5.782 0 01-2.121 2.121c-.802.481-1.808.654-2.88.7c-1.265.058-1.646.07-4.85.07s-3.584-.012-4.849-.07c-1.072-.046-2.078-.22-2.88-.7a5.782 5.782 0 01-2.121-2.121c-.481-.802-.654-1.808-.7-2.88c-.058-1.265-.07-1.646-.07-4.849s.013-3.584.071-4.851c.046-1.072.22-2.078.7-2.88a5.782 5.782 0 012.121-2.121c.802-.481 1.808-.654 2.88-.7c1.265-.058 1.646-.07 4.85-.07M12 0C8.758 0 8.345.014 7.052.072c-1.272.058-2.766.286-3.874.85c-1.376.683-2.519 1.792-3.202 3.202c-.564 1.108-.792 2.602-.85 3.874C.014 8.345 0 8.758 0 12c0 3.242.014 3.655.072 4.948c.058 1.272.286 2.766.85 3.874c.683 1.376 1.792 2.519 3.202 3.202c1.108.564 2.602.792 3.874.85C8.345 23.986 8.758 24 12 24s3.655-.014 4.948-.072c1.272-.058 2.766-.286 3.874-.85c1.376-.683 2.519-1.792 3.202-3.202c.564-1.108.792-2.602.85-3.874c.058-1.293.072-1.706.072-4.948s-.014-3.655-.072-4.948c-.058-1.272-.286-2.766-.85-3.874c-.683-1.376-1.792-2.519-3.202-3.202c-1.108-.564-2.602-.792-3.874-.85C15.655.014 15.242 0 12 0Zm0 5.838a6.16 6.16 0 00-6.162 6.162A6.16 6.16 0 0012 18.162A6.16 6.16 0 0018.162 12A6.16 6.16 0 0012 5.838Zm0 10.162a4.162 4.162 0 01-4.162-4.162A4.162 4.162 0 0112 7.838a4.162 4.162 0 014.162 4.162A4.162 4.162 0 0112 16zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                 />
               </svg>
             </a>
             <a href="#" class="social-link" aria-label="Facebook">
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  d="M8.373 12H6v3.56h2.373V24h4.868v-8.44H16l.727-3.56h-2.787V9.152c0-1.036.279-1.74 1.766-1.74h1.894V4.349a25.377 25.377 0 00-2.763-.14c-2.935 0-4.944 1.794-4.944 5.085V12z"
                 />
               </svg>
             </a>
             <a href="#" class="social-link" aria-label="Telegram">
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                  d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.906 7.224c.1-.003.321.023.465.14a.506.506 0 01.171.326c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.231.007-.032.014-.149-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
                 />
               </svg>
             </a>
@@ -466,5 +469,7 @@
       </div>
       <div class="copyright">© 2025 Radiance Beauty. All rights reserved.</div>
     </footer>
+
+    <script src="Scripts/Products.js"></script>
   </body>
 </html>

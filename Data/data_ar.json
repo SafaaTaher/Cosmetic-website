@@ -1,0 +1,260 @@
+[
+    {
+        "id": 1,
+        "name": "أحمر شفاه مخملي مطفي",
+        "category": "الشفاه",
+        "price": 28,
+        "rating": 5,
+        "reviews": 245,
+        "image": "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=580",
+        "colors": ["#8B2635", "#C85A54", "#A0522D", "#DC143C"],
+        "badge": "جديد",
+        "description": "تركيبة عالية الصبغة تدوم طويلاً"
+    },
+    {
+        "id": 2,
+        "name": "كريم أساس الإشراقة",
+        "category": "الوجه",
+        "price": 42,
+        "rating": 5,
+        "reviews": 312,
+        "image": "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=400&h=400&fit=crop",
+        "colors": ["#F5D5C0", "#E8B897", "#D4A574", "#8D5524"],
+        "description": "تغطية قابلة للبناء تمنح لمسة نهائية مثالية"
+    },
+    {
+        "id": 3,
+        "name": "لوحة ظلال العيون الفاخرة",
+        "category": "العيون",
+        "price": 58,
+        "rating": 5,
+        "reviews": 428,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "badge": "الأكثر مبيعاً",
+        "badgeColor": "#c17d5f",
+        "description": "12 درجة متنوعة لأي إطلالة"
+    },
+    {
+        "id": 4,
+        "name": "بخاخ تثبيت بلمسة لامعة",
+        "category": "الوجه",
+        "price": 32,
+        "rating": 5,
+        "reviews": 189,
+        "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=400&fit=crop",
+        "description": "ثبات يدوم طوال اليوم مع إشراقة ناعمة"
+    },
+    {
+        "id": 5,
+        "name": "ملمع شفاه فاخر",
+        "category": "الشفاه",
+        "price": 24,
+        "rating": 4,
+        "reviews": 156,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "colors": ["#FFB6C1", "#FF69B4", "#C17D5F"],
+        "description": "تركيبة لامعة غير لاصقة"
+    },
+    {
+        "id": 6,
+        "name": "ثنائي أحمر الخدود والكونتور",
+        "category": "الوجه",
+        "price": 38,
+        "rating": 5,
+        "reviews": 203,
+        "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop",
+        "colors": ["#FFC0CB", "#FFB6A3", "#E8B897"],
+        "badge": "جديد",
+        "description": "نحت وتحديد بكل سهولة"
+    },
+    {
+        "id": 7,
+        "name": "آيلاينر دقيق",
+        "category": "العيون",
+        "price": 22,
+        "rating": 5,
+        "reviews": 278,
+        "image": "https://images.unsplash.com/photo-1631730486572-226d1f595b68?w=400&h=400&fit=crop",
+        "colors": ["#000", "#2F4F4F", "#8B4513"],
+        "description": "مقاوم للماء ولا يتلطخ"
+    },
+    {
+        "id": 8,
+        "name": "سيروم مرطب",
+        "category": "العناية بالبشرة",
+        "price": 56,
+        "rating": 5,
+        "reviews": 392,
+        "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+        "badge": "الأكثر مبيعاً",
+        "badgeColor": "#c17d5f",
+        "description": "ترطيب عميق بفيتامين C"
+    },
+    {
+        "id": 9,
+        "name": "كريم نهاري بمعامل حماية SPF 50",
+        "category": "العناية بالبشرة",
+        "price": 44,
+        "rating": 4,
+        "reviews": 167,
+        "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        "description": "حماية من الشمس مع ترطيب مغذي"
+    },
+    {
+        "id": 10,
+        "name": "ماسكارا لتكثيف الرموش",
+        "category": "العيون",
+        "price": 26,
+        "rating": 5,
+        "reviews": 341,
+        "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+        "description": "تمنح طولاً وحجماً درامياً"
+    },
+    {
+        "id": 11,
+        "name": "إضاءة هايلايتر",
+        "category": "الوجه",
+        "price": 34,
+        "rating": 5,
+        "reviews": 289,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "description": "توهّج ناعم لجميع درجات البشرة"
+    },
+    {
+        "id": 12,
+        "name": "كريم ليلي لإصلاح البشرة",
+        "category": "العناية بالبشرة",
+        "price": 62,
+        "rating": 5,
+        "reviews": 215,
+        "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+        "badge": "جديد",
+        "description": "تجديد أثناء النوم"
+    },
+    {
+        "id": 13,
+        "name": "مجموعة قلم تحديد الشفاه",
+        "category": "الشفاه",
+        "price": 32,
+        "rating": 5,
+        "reviews": 198,
+        "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=400&fit=crop",
+        "colors": ["#8B2635", "#C85A54", "#A0522D"],
+        "description": "تحديد وشكل مثالي"
+    },
+    {
+        "id": 14,
+        "name": "كريم أحمر الخدود",
+        "category": "الوجه",
+        "price": 29,
+        "rating": 4,
+        "reviews": 176,
+        "image": "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?w=400&h=400&fit=crop",
+        "colors": ["#FFB6C1", "#FF69B4", "#FFC0CB"],
+        "description": "لمسة طبيعية متوهّجة"
+    },
+    {
+        "id": 15,
+        "name": "جل الحواجب",
+        "category": "العيون",
+        "price": 24,
+        "rating": 5,
+        "reviews": 267,
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+        "description": "ثبات طويل وتحديد دقيق"
+    },
+    {
+        "id": 16,
+        "name": "مزيل ماكياج",
+        "category": "العناية بالبشرة",
+        "price": 28,
+        "rating": 5,
+        "reviews": 312,
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+        "description": "تنظيف لطيف وفعّال"
+    },
+    {
+        "id": 17,
+        "name": "أحمر شفاه سائل",
+        "category": "الشفاه",
+        "price": 26,
+        "rating": 4,
+        "reviews": 223,
+        "image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=400&fit=crop",
+        "colors": ["#8B2635", "#DC143C", "#C85A54"],
+        "description": "لمسة مطفية لا تنتقل"
+    },
+    {
+        "id": 18,
+        "name": "سيروم تمهيد المكياج",
+        "category": "الوجه",
+        "price": 48,
+        "rating": 5,
+        "reviews": 198,
+        "image": "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop",
+        "badge": "جديد",
+        "description": "قاعدة مثالية للمكياج"
+    },
+    {
+        "id": 19,
+        "name": "ظلال عيون مفردة",
+        "category": "العيون",
+        "price": 18,
+        "rating": 4,
+        "reviews": 145,
+        "image": "https://i.ibb.co/L5T473c/eyeshadow-singles.jpg",
+        "description": "درجات صبغة عالية"
+    },
+    {
+        "id": 20,
+        "name": "زيت وجه",
+        "category": "العناية بالبشرة",
+        "price": 52,
+        "rating": 5,
+        "reviews": 234,
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+        "description": "مزيج نباتي مغذي"
+    },
+    {
+        "id": 21,
+        "name": "بلسم شفاه بمعامل SPF",
+        "category": "الشفاه",
+        "price": 16,
+        "rating": 4,
+        "reviews": 189,
+        "image": "https://images.unsplash.com/photo-1631730486572-226d1f595b68?w=400&h=400&fit=crop",
+        "description": "ترطيب وحماية"
+    },
+    {
+        "id": 22,
+        "name": "بودرة التثبيت",
+        "category": "الوجه",
+        "price": 36,
+        "rating": 5,
+        "reviews": 276,
+        "image": "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop",
+        "description": "لمسة نهائية شفافة خالية من اللمعان"
+    },
+    {
+        "id": 23,
+        "name": "سيروم للرموش",
+        "category": "العيون",
+        "price": 58,
+        "rating": 5,
+        "reviews": 312,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "badge": "الأكثر مبيعاً",
+        "badgeColor": "#c17d5f",
+        "description": "تقوية وإطالة"
+    },
+    {
+        "id": 24,
+        "name": "كريم حول العيون",
+        "category": "العناية بالبشرة",
+        "price": 54,
+        "rating": 5,
+        "reviews": 267,
+        "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+        "description": "تقليل الهالات السوداء والانتفاخ"
+    }
+]

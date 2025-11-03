@@ -1,0 +1,302 @@
+{
+  "login_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "HOME",
+        "PRODUCTS",
+        "CONTACT",
+        "LOGIN"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "form": {
+      "title": "RADIANCE",
+      "subtitle": "Welcome Back",
+      "email_label": "Email Address",
+      "email_placeholder": "example@radiance.com",
+      "password_label": "Password",
+      "password_placeholder": "Enter your password",
+      "login_button": "LOGIN",
+      "signup_link": "Don't have an account? Sign Up",
+      "forgot_password_link": "Forgot Password?"
+    }
+  },
+  "contact_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "HOME",
+        "PRODUCTS",
+        "CONTACT",
+        "LOGIN"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "contact_info_section": {
+      "title": "Contact Us",
+      "description": "We'd love to hear from you! Whether you have questions about our products, orders, or partnership opportunities, our team is ready to help. Reach out and we'll get back to you as soon as possible.",
+      "address": "123 Glow Street, Dubai, UAE",
+      "phone": "+971 50 123 4567",
+      "email": "support@radiancebeauty.com",
+      "hours": "Mon - Fri | 9:00 AM - 6:00 PM"
+    },
+    "message_form": {
+      "title": "Send Us a Message",
+      "full_name_label": "Full Name",
+      "full_name_placeholder": "Enter your full name",
+      "email_label": "Email Address",
+      "email_placeholder": "example@radiance.com",
+      "message_label": "Message",
+      "message_placeholder": "Type your message here...",
+      "send_button": "SEND MESSAGE"
+    },
+    "footer": {
+      "about_title": "ABOUT Radiance",
+      "about_text": "Premium cosmetics designed to enhance your natural beauty with sustainable, cruelty-free formulas.",
+      "quick_links_title": "QUICK LINKS",
+      "quick_links": [
+        "Products",
+        "About Us",
+        "Contact",
+        "FAQ"
+      ],
+      "follow_us_title": "FOLLOW US",
+      "copyright": "© 2025 Radiance Beauty. All rights reserved."
+    }
+  },
+  "products_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "HOME",
+        "PRODUCTS",
+        "CONTACT",
+        "LOGIN"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "main_content": {
+      "title": "Our Products",
+      "subtitle": "Discover luxury cosmetics crafted for the modern woman.",
+      "search_placeholder": "Search products...",
+      "filter_all_products": "All Products",
+      "filter_price": "All Prices",
+      "filter_featured": "Featured",
+      "filter_sort": "Sort by",
+      "filter_categories": [
+        "Lips",
+        "Face",
+        "Eyes",
+        "Skincare",
+        "Makeup"
+      ],
+      "products": [
+        {
+          "name": "Velvet Matte Lipstick",
+          "price": "$28",
+          "rating": "4.5 (120)",
+          "tag": "New"
+        },
+        {
+          "name": "Radiance Foundation",
+          "price": "$42",
+          "rating": "4.8 (240)"
+        },
+        {
+          "name": "Luxe Eye Palette",
+          "price": "$38",
+          "rating": "4.7 (180)",
+          "tag": "Bestseller"
+        },
+        {
+          "name": "Dewy Setting Spray",
+          "price": "$24",
+          "rating": "4.6 (95)"
+        },
+        {
+          "name": "Luxe Lip Gloss",
+          "price": "$22",
+          "rating": "4.4 (110)"
+        },
+        {
+          "name": "Blush & Contour Duo",
+          "price": "$32",
+          "rating": "4.9 (210)"
+        },
+        {
+          "name": "Precision Eyeliner",
+          "price": "$20",
+          "rating": "4.3 (65)"
+        },
+        {
+          "name": "Hydrating Serum",
+          "price": "$56",
+          "rating": "4.9 (300)",
+          "tag": "Bestseller"
+        },
+        {
+          "name": "SPF 50 Day Cream",
+          "price": "$44",
+          "rating": "4.7 (150)"
+        },
+        {
+          "name": "Volume Mascara",
+          "price": "$26",
+          "rating": "4.5 (80)"
+        },
+        {
+          "name": "Illuminating Highlighter",
+          "price": "$34",
+          "rating": "4.6 (130)"
+        },
+        {
+          "name": "Night Repair Cream",
+          "price": "$52",
+          "rating": "4.8 (190)"
+        }
+      ],
+      "pagination": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "footer": {
+      "about_title": "ABOUT Radiance",
+      "about_text": "Premium cosmetics designed to enhance your natural beauty with sustainable, cruelty-free formulas.",
+      "quick_links_title": "QUICK LINKS",
+      "quick_links": [
+        "Home",
+        "Products",
+        "About Us",
+        "Contact",
+        "Login"
+      ],
+      "follow_us_title": "FOLLOW US",
+      "copyright": "© 2025 Radiance Beauty. All rights reserved."
+    }
+  },
+  "home_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "HOME",
+        "PRODUCTS",
+        "CONTACT",
+        "LOGIN"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "hero_section": {
+      "title": "Unveil Your Natural Beauty",
+      "subtitle": "Discover luxury cosmetics crafted for the modern woman.",
+      "shop_now_button": "Shop Now"
+    },
+    "why_choose_section": {
+      "title": "Why Choose Radiance",
+      "items": [
+        {
+          "title": "Dermatologist Approved",
+          "description": "Clinically tested and approved by top dermatologists and skin experts."
+        },
+        {
+          "title": "Luxury Experience",
+          "description": "Indulge in a premium, high-quality cosmetic experience."
+        },
+        {
+          "title": "Sustainable Beauty",
+          "description": "Committed to eco-friendly practices and ethical sourcing."
+        }
+      ]
+    },
+    "collections_section": {
+      "title": "Explore Our Collections",
+      "subtitle": "Discover our curated collections of beautiful cosmetics.",
+      "collections": [
+        "Lips",
+        "Face",
+        "Eyes",
+        "Skincare"
+      ]
+    },
+    "top_rated_section": {
+      "title": "Top-Rated Beauty Picks",
+      "products": [
+        {
+          "name": "Velvet Matte Lipstick",
+          "price": "$28"
+        },
+        {
+          "name": "Radiance Foundation",
+          "price": "$42"
+        },
+        {
+          "name": "Radiance Eye Palette",
+          "price": "$38"
+        },
+        {
+          "name": "Hydrating Serum",
+          "price": "$56"
+        },
+        {
+          "name": "Night Repair Cream",
+          "price": "$52"
+        },
+        {
+          "name": "Illuminating Highlighter",
+          "price": "$34"
+        }
+      ],
+      "view_all_button": "View All Products"
+    },
+    "customer_reviews_section": {
+      "title": "What Our Customers Say",
+      "reviews": [
+        {
+          "text": "The quality is absolutely amazing! My skin feels so much better.",
+          "author": "Sarah M."
+        },
+        {
+          "text": "Finally found a brand that cares about the environment and my skin.",
+          "author": "Jessica B."
+        },
+        {
+          "text": "The lipstick wears all day long and the color is perfect.",
+          "author": "Emily R."
+        }
+      ]
+    },
+    "newsletter_section": {
+      "title": "Join the Radiance Club",
+      "placeholder": "Enter your email address",
+      "subscribe_button": "Join Now"
+    },
+    "footer": {
+      "about_title": "ABOUT Radiance",
+      "about_text": "Premium cosmetics designed to enhance your natural beauty with sustainable, cruelty-free formulas.",
+      "quick_links_title": "QUICK LINKS",
+      "quick_links": [
+        "Home",
+        "Products",
+        "About Us",
+        "Contact",
+        "Login"
+      ],
+      "follow_us_title": "FOLLOW US",
+      "copyright": "© 2025 Radiance Beauty. All rights reserved."
+    }
+  }
+}

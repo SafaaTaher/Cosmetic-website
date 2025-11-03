@@ -9,145 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="styles/Products.css" />
+    <link rel="stylesheet" href="styles/Contact.css" />
 
-    <style>
-      /* Contact Page Custom Styles */
-
-      body {
-        font-family: 'Georgia', serif;
-        background: linear-gradient(135deg, #fef5ef 0%, #f9e8dc 100%);
-        overflow-x: hidden;
-      }
-
-      .contact-container {
-        padding: 8rem 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 4rem;
-        flex-wrap: wrap;
-      }
-
-      .contact-info {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .contact-info h2 {
-        font-size: 2.5rem;
-        color: #2d2d2d;
-        margin-bottom: 1rem;
-      }
-
-      .contact-info p {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 1rem;
-      }
-
-      .contact-info .highlight {
-        color: #c17d5f;
-        font-weight: bold;
-      }
-
-      .contact-details {
-        margin-top: 2rem;
-      }
-
-      .contact-details p {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        color: #444;
-        margin-bottom: 0.8rem;
-      }
-
-      .contact-form {
-        flex: 1;
-        min-width: 350px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-        padding: 2.5rem;
-      }
-
-      .contact-form h3 {
-        color: #2d2d2d;
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-        text-align: center;
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-group label {
-        display: block;
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 0.9rem 1rem;
-        border: 2px solid #eee;
-        border-radius: 8px;
-        font-size: 1rem;
-        outline: none;
-        transition: border-color 0.2s;
-      }
-
-      .form-group input:focus,
-      .form-group textarea:focus {
-        border-color: #c17d5f;
-      }
-
-      .form-group textarea {
-        resize: none;
-        height: 150px;
-      }
-
-      .submit-btn {
-        background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
-        color: white;
-        border: none;
-        padding: 0.9rem 2rem;
-        font-size: 1rem;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.3s;
-        width: 100%;
-      }
-
-      .submit-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(193, 125, 95, 0.3);
-      }
-
-      .success-message {
-        margin-top: 1rem;
-        text-align: center;
-        color: green;
-        display: none;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 968px) {
-        .contact-container {
-          flex-direction: column;
-          padding: 6rem 5%;
-        }
-
-        .contact-info,
-        .contact-form {
-          width: 100%;
-        }
-      }
-    </style>
+  
 
     <script defer>
       function handleContactSubmit(event) {
@@ -177,14 +42,56 @@
   <body>
     <header>
       <div class="logo">RADIANCE</div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
       <nav>
         <a href="index.html">HOME</a>
         <a href="Products.html">PRODUCTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html" style="color: #c17d5f;">CONTACT</a>
-        <a href="login.html">LOGIN</a>
+        <a href="contact.html" class="nav-text">CONTACT</a>
+        <a href="login.html" class="nav-text">LOGIN</a>
+        
+        <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </div>
+      <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+
       </nav>
+    
     </header>
+
+    <section class="mobile-nav" id="mobileNav">
+      <a href="index.html" onclick="toggleMobileMenu()">HOME</a>
+      <a href="Products.html" onclick="toggleMobileMenu()">PRODUCTS</a>
+      <a href="contact.html" onclick="toggleMobileMenu()">CONTACT</a>
+      <a href="login.html" onclick="toggleMobileMenu()">LOGIN</a>
+      <div class="mobile-cart" onclick="toggleCart(); toggleMobileMenu();">
+        🛒 Shopping Cart <span class="cart-count" id="cartCountMobile">0</span>
+      </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">AR | EN</button>
+
+    </section>
+
+    <section class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></section>
+
+    <section class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Shopping Cart</h2>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🛍️</div>
+          <h3>Your cart is empty</h3>
+          <p>Add some products to get started!</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span class="cart-total-label">Total:</span>
+          <span class="cart-total-amount" id="cartTotal">$0</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
+      </div>
+    </section>
 
     <section class="contact-container">
       <div class="contact-info">
@@ -254,10 +161,10 @@
         </div>
         <div class="footer-section">
           <h4>QUICK LINKS</h4>
+          <a href="index.html">Home</a>
           <a href="Products.html">Products</a>
-          <a href="about.html">About Us</a>
           <a href="contact.html">Contact</a>
-          <a href="#">FAQ</a>
+          <a href="Login.html">Login</a>
         </div>
         <div class="footer-section">
           <h4>FOLLOW US</h4>
@@ -272,5 +179,6 @@
         © 2025 Radiance Beauty. All rights reserved.
       </div>
     </footer>
+    <script src="Scripts/Products.js"></script>
   </body>
 </html>

@@ -1,0 +1,260 @@
+[
+    {
+        "id": 1,
+        "name": "Velvet Matte Lipstick",
+        "category": "lips",
+        "price": 28,
+        "rating": 5,
+        "reviews": 245,
+        "image": "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=580",
+        "colors": ["#8B2635", "#C85A54", "#A0522D", "#DC143C"],
+        "badge": "NEW",
+        "description": "Long-lasting, highly pigmented formula"
+    },
+    {
+        "id": 2,
+        "name": "Radiance Foundation",
+        "category": "face",
+        "price": 42,
+        "rating": 5,
+        "reviews": 312,
+        "image": "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=400&h=400&fit=crop",
+        "colors": ["#F5D5C0", "#E8B897", "#D4A574", "#8D5524"],
+        "description": "Flawless, buildable coverage"
+    },
+    {
+        "id": 3,
+        "name": "Luxe Eye Palette",
+        "category": "eyes",
+        "price": 58,
+        "rating": 5,
+        "reviews": 428,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "badge": "BESTSELLER",
+        "badgeColor": "#c17d5f",
+        "description": "12 versatile shades for any look"
+    },
+    {
+        "id": 4,
+        "name": "Dewy Setting Spray",
+        "category": "face",
+        "price": 32,
+        "rating": 5,
+        "reviews": 189,
+        "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=400&fit=crop",
+        "description": "All-day lasting finish with radiance"
+    },
+    {
+        "id": 5,
+        "name": "Luxe Lip Gloss",
+        "category": "lips",
+        "price": 24,
+        "rating": 4,
+        "reviews": 156,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "colors": ["#FFB6C1", "#FF69B4", "#C17D5F"],
+        "description": "High-shine, non-sticky formula"
+    },
+    {
+        "id": 6,
+        "name": "Blush & Contour Duo",
+        "category": "face",
+        "price": 38,
+        "rating": 5,
+        "reviews": 203,
+        "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop",
+        "colors": ["#FFC0CB", "#FFB6A3", "#E8B897"],
+        "badge": "NEW",
+        "description": "Sculpt and define effortlessly"
+    },
+    {
+        "id": 7,
+        "name": "Precision Eyeliner",
+        "category": "eyes",
+        "price": 22,
+        "rating": 5,
+        "reviews": 278,
+        "image": "https://images.unsplash.com/photo-1631730486572-226d1f595b68?w=400&h=400&fit=crop",
+        "colors": ["#000", "#2F4F4F", "#8B4513"],
+        "description": "Waterproof, smudge-proof formula"
+    },
+    {
+        "id": 8,
+        "name": "Hydrating Serum",
+        "category": "skincare",
+        "price": 56,
+        "rating": 5,
+        "reviews": 392,
+        "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+        "badge": "BESTSELLER",
+        "badgeColor": "#c17d5f",
+        "description": "Deep moisture with vitamin C"
+    },
+    {
+        "id": 9,
+        "name": "SPF 50 Day Cream",
+        "category": "skincare",
+        "price": 44,
+        "rating": 4,
+        "reviews": 167,
+        "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        "description": "Sun protection with nourishment"
+    },
+    {
+        "id": 10,
+        "name": "Volume Mascara",
+        "category": "eyes",
+        "price": 26,
+        "rating": 5,
+        "reviews": 341,
+        "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+        "description": "Dramatic length and volume"
+    },
+    {
+        "id": 11,
+        "name": "Illuminating Highlighter",
+        "category": "face",
+        "price": 34,
+        "rating": 5,
+        "reviews": 289,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "description": "Radiant glow for all skin tones"
+    },
+    {
+        "id": 12,
+        "name": "Night Repair Cream",
+        "category": "skincare",
+        "price": 62,
+        "rating": 5,
+        "reviews": 215,
+        "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+        "badge": "NEW",
+        "description": "Regenerate while you sleep"
+    },
+    {
+        "id": 13,
+        "name": "Lip Liner Set",
+        "category": "lips",
+        "price": 32,
+        "rating": 5,
+        "reviews": 198,
+        "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=400&fit=crop",
+        "colors": ["#8B2635", "#C85A54", "#A0522D"],
+        "description": "Define and shape perfectly"
+    },
+    {
+        "id": 14,
+        "name": "Cream Blush",
+        "category": "face",
+        "price": 29,
+        "rating": 4,
+        "reviews": 176,
+        "image": "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?w=400&h=400&fit=crop",
+        "colors": ["#FFB6C1", "#FF69B4", "#FFC0CB"],
+        "description": "Natural, dewy flush"
+    },
+    {
+        "id": 15,
+        "name": "Brow Gel",
+        "category": "eyes",
+        "price": 24,
+        "rating": 5,
+        "reviews": 267,
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+        "description": "Long-lasting hold and definition"
+    },
+    {
+        "id": 16,
+        "name": "Makeup Remover",
+        "category": "skincare",
+        "price": 28,
+        "rating": 5,
+        "reviews": 312,
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+        "description": "Gentle, effective cleansing"
+    },
+    {
+        "id": 17,
+        "name": "Liquid Lipstick",
+        "category": "lips",
+        "price": 26,
+        "rating": 4,
+        "reviews": 223,
+        "image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=400&fit=crop",
+        "colors": ["#8B2635", "#DC143C", "#C85A54"],
+        "description": "Transfer-proof matte finish"
+    },
+    {
+        "id": 18,
+        "name": "Primer Serum",
+        "category": "face",
+        "price": 48,
+        "rating": 5,
+        "reviews": 198,
+        "image": "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop",
+        "badge": "NEW",
+        "description": "Flawless base for makeup"
+    },
+    {
+        "id": 19,
+        "name": "Eyeshadow Singles",
+        "category": "eyes",
+        "price": 18,
+        "rating": 4,
+        "reviews": 145,
+        "image": "https://i.ibb.co/L5T473c/eyeshadow-singles.jpg",
+        "description": "Highly pigmented shades"
+    },
+    {
+        "id": 20,
+        "name": "Facial Oil",
+        "category": "skincare",
+        "price": 52,
+        "rating": 5,
+        "reviews": 234,
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+        "description": "Nourishing botanical blend"
+    },
+    {
+        "id": 21,
+        "name": "Lip Balm SPF",
+        "category": "lips",
+        "price": 16,
+        "rating": 4,
+        "reviews": 189,
+        "image": "https://images.unsplash.com/photo-1631730486572-226d1f595b68?w=400&h=400&fit=crop",
+        "description": "Moisturize and protect"
+    },
+    {
+        "id": 22,
+        "name": "Setting Powder",
+        "category": "face",
+        "price": 36,
+        "rating": 5,
+        "reviews": 276,
+        "image": "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop",
+        "description": "Translucent, shine-free finish"
+    },
+    {
+        "id": 23,
+        "name": "Lash Serum",
+        "category": "eyes",
+        "price": 58,
+        "rating": 5,
+        "reviews": 312,
+        "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=400&fit=crop",
+        "badge": "BESTSELLER",
+        "badgeColor": "#c17d5f",
+        "description": "Strengthen and lengthen"
+    },
+    {
+        "id": 24,
+        "name": "Eye Cream",
+        "category": "skincare",
+        "price": 54,
+        "rating": 5,
+        "reviews": 267,
+        "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+        "description": "Reduce dark circles and puffiness"
+    }
+]

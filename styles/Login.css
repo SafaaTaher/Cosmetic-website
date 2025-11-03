@@ -1,0 +1,102 @@
+      /* Extra login page styles */
+
+      body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #fef5ef 0%, #f9e8dc 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .login-logo {
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+      }
+
+      .login-container h5 {
+        margin-bottom: 1.5rem;
+        color: #665b43;
+        opacity: 0.5;
+      }
+
+      .input-group {
+        margin-bottom: 1.2rem;
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .input-group input:focus {
+        border-color: #c17d5f;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 0.9rem;
+        background: linear-gradient(135deg, #d4a574 0%, #c17d5f 100%);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.3s;
+      }
+
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(193, 125, 95, 0.3);
+      }
+
+      .extra-links {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .extra-links a {
+        color: #c17d5f;
+        text-decoration: none;
+      }
+
+      .extra-links a:hover {
+        text-decoration: underline;
+      }
+
+      .error-msg {
+        color: red;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        display: none;
+      }
+  

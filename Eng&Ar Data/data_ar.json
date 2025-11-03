@@ -1,0 +1,300 @@
+{
+  "login_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "الرئيسية",
+        "المنتجات",
+        "تواصل معنا",
+        "سجل الدخول"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "form": {
+      "title": "RADIANCE",
+      "subtitle": "أهلاً بعودتك",
+      "email_label": "عنوان البريد الإلكتروني",
+      "email_placeholder": "example@radiance.com",
+      "password_label": "كلمة المرور",
+      "password_placeholder": "أدخل كلمة المرور",
+      "login_button": "LOGIN",
+      "signup_link": "ليس لديك حساب؟ سجل.",
+      "forgot_password_link": "هل نسيت كلمة المرور؟"
+    }
+  },
+  "contact_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "الرئيسية",
+        "المنتجات",
+        "تواصل معنا",
+        "سجل الدخول"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "contact_info_section": {
+      "title": "اتصل بنا",
+      "description": "يسعدنا أن نسمع منك! سواء كانت لديك أسئلة حول منتجاتنا، أو طلباتك، أو فرص الشراكة، فإن فريقنا مستعد للمساعدة. تواصل معنا وسنعاود الاتصال بك في أقرب وقت ممكن.",
+      "address": "123 Glow Street, Dubai, UAE",
+      "phone": "+971 50 123 4567",
+      "email": "support@radiancebeauty.com",
+      "hours": "Mon - Fri | 9:00 AM - 6:00 PM"
+    },
+    "message_form": {
+      "title": "أرسل لنا رسالة",
+      "full_name_label": "الاسم الكامل",
+      "full_name_placeholder": "أدخل اسمك الكامل",
+      "email_label": "عنوان البريد الإلكتروني",
+      "email_placeholder": "example@radiance.com",
+      "message_label": "رسالة",
+      "message_placeholder": "اكتب رسالتك هنا...",
+      "send_button": "إرسال رسالة"
+    },
+    "footer": {
+      "about_title": "حول الإشراقة",
+      "about_text": "مستحضرات تجميل فاخرة مصممة لتعزيز جمالك الطبيعي بتركيبات مستدامة وخالية من القسوة.",
+      "quick_links_title": "روابط سريعة",
+      "quick_links": [
+        "Products",
+        "About Us",
+        "Contact",
+        "FAQ"
+      ],
+      "follow_us_title": "تابعنا",
+      "copyright": "© 2025 راديانس بيوتي. جميع الحقوق محفوظة."
+    }
+  },
+  "products_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "الرئيسية",
+        "المنتجات",
+        "تواصل معنا",
+        "سجل الدخول"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "main_content": {
+      "title": "منتجاتنا",
+      "subtitle": "اكتشف مستحضرات تجميل فاخرة مصممة للمرأة العصرية.",
+      "search_placeholder": "ابحث عن المنتجات...",
+      "filter_all_products": "جميع المنتجات",
+      "filter_price": "جميع الأسعار",
+      "filter_featured": "مميز",
+      "filter_sort": "ترتيب حسب",
+      "filter_categories": [
+        "Lips",
+        "Face",
+        "Eyes",
+        "Skincare",
+        "Makeup"
+      ],
+      "products": [
+        {
+          "name": "أحمر شفاه مخملي مطفي",
+          "price": "$28",
+          "rating": "4.5 (120)",
+          "tag": "جديد"
+        },
+        {
+          "name": "كريم أساس الإشراقة",
+          "price": "$42",
+          "rating": "4.8 (240)"
+        },
+        {
+          "name": "باليت ظلال العيون الفاخرة",
+          "price": "$38",
+          "rating": "٤.٧ (١٨٠)",
+          "tag": "الأكثر مبيعًا"
+        },
+        {
+          "name": "بخاخ تثبيت بلمسة ندية",
+          "price": "$24",
+          "rating": "4.6 (95)"
+        },
+        {
+          "name": "ملمع شفاه فاخر",
+          "price": "$22",
+          "rating": "4.4 (110)"
+        },
+        {
+          "name": "ثنائي أحمر الخدود والكونتور",
+          "price": "$32",
+          "rating": "4.9 (210)"
+        },
+        {
+          "name": "آيلاينر دقيق",
+          "price": "$20",
+          "rating": "4.3 (65)"
+        },
+        {
+          "name": "سيروم مرطب",
+          "price": "$56",
+          "rating": "4.9 (300)",
+          "tag": "الأكثر مبيعًا"
+        },
+        {
+          "name": "كريم نهاري بعامل حماية SPF 50",
+          "price": "$44",
+          "rating": "4.7 (150)"
+        },
+        {
+          "name": "ماسكارا كثافة",
+          "price": "$26",
+          "rating": "4.5 (80)"
+        },
+        {
+          "name": "هايلايتر مُضيء",
+          "price": "$34",
+          "rating": "4.6 (130)"
+        },
+        {
+          "name": "كريم إصلاح ليلي",
+          "price": "$52",
+          "rating": "4.8 (190)"
+        }
+      ],
+      "pagination": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "footer": {
+      "about_title": "حول الإشراقة",
+      "about_text": "مستحضرات تجميل فاخرة مصممة لتعزيز جمالك الطبيعي بتركيبات مستدامة وخالية من القسوة.",
+      "quick_links_title": "روابط سريعة",
+      "quick_links": [
+        "الرئيسية",
+        "المنتجات",
+        "تواصل معنا",
+        "سجل الدخول"
+      ],
+      "follow_us_title": "تابعنا",
+      "copyright": "© 2025 راديانس بيوتي. جميع الحقوق محفوظة."
+    }
+  },
+  "home_page": {
+    "header": {
+      "logo": "RADIANCE",
+      "nav_links": [
+        "الرئيسية",
+        "المنتجات",
+        "تواصل معنا",
+        "سجل الدخول"
+      ],
+      "language_toggle": [
+        "AR",
+        "EN"
+      ]
+    },
+    "hero_section": {
+      "title": "اكتشفي جمالك الطبيعي",
+      "subtitle": "اكتشف مستحضرات تجميل فاخرة مصممة للمرأة العصرية.",
+      "shop_now_button": "تسوق الآن"
+    },
+    "why_choose_section": {
+      "title": "لماذا تختارين راديانس؟",
+      "items": [
+        {
+          "title": "معتمد من أطباء الجلدية",
+          "description": "تم اختباره سريريًا والموافقة عليه من قبل كبار أطباء الجلدية وخبراء البشرة."
+        },
+        {
+          "title": "تجربة فاخرة",
+          "description": "دلل نفسك بتجربة تجميلية فاخرة وعالية الجودة."
+        },
+        {
+          "title": "الجمال المستدام",
+          "description": "ملتزمون بممارسات صديقة للبيئة ومصادر أخلاقية."
+        }
+      ]
+    },
+    "collections_section": {
+      "title": "استكشف مجموعاتنا",
+      "subtitle": "اكتشف مجموعاتنا المنسقة من مستحضرات التجميل الجميلة.",
+      "collections": [
+        "Lips",
+        "Face",
+        "Eyes",
+        "Skincare"
+      ]
+    },
+    "top_rated_section": {
+      "title": "مختارات الجمال الأعلى تقييمًا",
+      "products": [
+        {
+          "name": "أحمر شفاه مخملي مطفي",
+          "price": "$28"
+        },
+        {
+          "name": "كريم أساس الإشراقة",
+          "price": "$42"
+        },
+        {
+          "name": "باليت إشراق العيون",
+          "price": "$38"
+        },
+        {
+          "name": "سيروم مرطب",
+          "price": "$56"
+        },
+        {
+          "name": "كريم إصلاح ليلي",
+          "price": "$52"
+        },
+        {
+          "name": "هايلايتر مُضيء",
+          "price": "$34"
+        }
+      ],
+      "view_all_button": "عرض جميع المنتجات"
+    },
+    "customer_reviews_section": {
+      "title": "ماذا يقول عملاؤنا",
+      "reviews": [
+        {
+          "text": "الجودة مذهلة تمامًا! بشرتي أصبحت أفضل بكثير.",
+          "author": "Sarah M."
+        },
+        {
+          "text": "أخيرًا وجدت علامة تجارية تهتم بالبيئة وبشرتي.",
+          "author": "Jessica B."
+        },
+        {
+          "text": "أحمر الشفاه يدوم طوال اليوم واللون مثالي.",
+          "author": "Emily R."
+        }
+      ]
+    },
+    "newsletter_section": {
+      "title": "انضم إلى نادي الإشراق",
+      "placeholder": "أدخل عنوان بريدك الإلكتروني",
+      "subscribe_button": "انضم الآن"
+    },
+    "footer": {
+      "about_title": "عن الإشراق",
+      "about_text": "مستحضرات تجميل فاخرة مصممة لتعزيز جمالك الطبيعي بتركيبات مستدامة وخالية من القسوة.",
+      "quick_links_title": "روابط سريعة",
+      "quick_links": [
+        "الرئيسية",
+        "المنتجات",
+        "تواصل معنا",
+        "سجل الدخول"
+      ],
+      "follow_us_title": "تابعنا",
+      "copyright": "© 2025 راديانس بيوتي. جميع الحقوق محفوظة."
+    }
+  }
+}
